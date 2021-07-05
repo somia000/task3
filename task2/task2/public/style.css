@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+
+body{
+	background-image: url('robot.jpg');
+	text-align: center;
+	opacity: 0.7;
+	margin-top: 280px;
+	letter-spacing: 15px;
+}
+
+
+.button2{
+	width: 120px;
+	height: 50px;
+	color: white;
+	background-color: #000000;
+	border-radius: 50px;
+	box-shadow: inset 0 0 0 0 #ffff00;
+	transition: ease-out 0.3s;
+	font-size: 20px;
+	outline: none;
+}
+
+.button2:hover {
+		box-shadow: inset 300px 0 0 0 #ffff00;
+		cursor: pointer;
+		color: #000000;
+}
+
+											/* button-stop */
+
+.button-stop{
+	width: 120px;
+	height: 50px;
+	color: white;
+	background-color: #000000;
+	border-radius: 50px;
+	box-shadow: inset 0 0 0 0 #ff0000;
+	transition: ease-out 0.3s;
+	font-size: 20px;
+	outline: none;	
+}
+
+.button-stop:hover {
+		box-shadow: inset 300px 0 0 0 #ff0000;
+		cursor: pointer;
+		color: #000000;
+	
+}
+
+

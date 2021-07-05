@@ -1,0 +1,253 @@
+{
+  "intents": [
+    {
+      "intent": "استفسار",
+      "examples": [
+        {
+          "text": "ابي استفسر"
+        },
+        {
+          "text": "استفسار"
+        },
+        {
+          "text": "حابه استفسر"
+        },
+        {
+          "text": "عندي استفسار"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "ترحيب",
+      "examples": [
+        {
+          "text": "اسعد الله مساكم بكل خير"
+        },
+        {
+          "text": "السلام عليكم"
+        },
+        {
+          "text": "الو"
+        },
+        {
+          "text": "سلام الله عليكم"
+        },
+        {
+          "text": "مرحبا"
+        },
+        {
+          "text": "هاااااي"
+        },
+        {
+          "text": "هاي"
+        },
+        {
+          "text": "هلو"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "شكر",
+      "examples": [
+        {
+          "text": "اشكرك"
+        },
+        {
+          "text": "شكرا"
+        },
+        {
+          "text": "شكرًا"
+        },
+        {
+          "text": "شكرًا لك"
+        },
+        {
+          "text": "يعطيك العافية"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "واجهة",
+      "examples": [
+        {
+          "text": "ايش الواجهات الموجودة؟"
+        },
+        {
+          "text": "ايش هيا الواجهات؟"
+        },
+        {
+          "text": "كم عندنا واجهه؟"
+        },
+        {
+          "text": "كم فيه واجهه"
+        },
+        {
+          "text": "واجهه١"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "واجهه",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": " ياقلبي انت عندنا واجهتين ،،  الواجهة الاولى عبارة عن واجهة للتحكم بذراع الروبوت فيها 6 محركات نقدر من خلالها نحرك ذراع الروبوت. ،، الواجهة الثانية هي واجهة لتحريك قاعدة الروبوت ( يمين، يسار ، امام، خلف، وقوف)"
+              },
+              {
+                "text": ""
+              },
+              {
+                "text": ""
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#واجهة",
+      "dialog_node": "node_4_1625497366265",
+      "previous_sibling": "node_6_1625248673739"
+    },
+    {
+      "type": "standard",
+      "title": "شكر",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "العفو يا عيوني انت ،، دايم بخدمتك"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#شكر",
+      "dialog_node": "node_5_1625501876890",
+      "previous_sibling": "node_4_1625497366265"
+    },
+    {
+      "type": "standard",
+      "title": "استفسار",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "عيوني لك عن ايش تبي تستفسر؟"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#استفسار",
+      "dialog_node": "node_6_1625248673739",
+      "previous_sibling": "node_9_1625247362042"
+    },
+    {
+      "type": "standard",
+      "title": "ترحيب",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "ياهلا والله .. آمرني؟"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#ترحيب",
+      "dialog_node": "node_9_1625247362042",
+      "previous_sibling": "مرحبا"
+    },
+    {
+      "type": "standard",
+      "title": "أي شيء آخر",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "لم أفهم، يمكنك محاولة اعادة الصياغة"
+              },
+              {
+                "text": "هل يمكنك اعادة صياغة عبارتك؟ أنا لا فهم"
+              },
+              {
+                "text": "لم أفهم قصدك"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "أي شيء آخر",
+      "previous_sibling": "node_5_1625501876890",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "مرحبا",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "ارحببب ،، كيف أقدر أخدمك؟"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "مرحبا"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "disambiguation": {
+      "prompt": ":هل قصدت",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "كل ما سبق خطأ"
+    },
+    "human_agent_assist": {
+      "prompt": ":هل قصدت"
+    }
+  },
+  "learning_opt_out": false,
+  "name": "تحدث",
+  "language": "ar",
+  "description": ""
+}
